@@ -9,9 +9,9 @@ import { catchError, retry } from 'rxjs/operators';
 export class MainService {
     constructor(private http: HttpClient) { }
 
-    configUrl = 'https://api.github.com/repos/fabian818/github-test/commits';
+    apiUrl = 'https://api.github.com/repos/fabian818/angular-test/commits';
 
     getCommits() {
-      return this.http.get(this.configUrl);
+      return this.http.get(this.apiUrl);
     }
 }

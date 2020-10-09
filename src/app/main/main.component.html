@@ -1,6 +1,12 @@
-<p>Commits</p>
-<ul class="heroes">
-  <li *ngFor="let commit of commits">
-    <span class="badge">{{commit.message}}</span> {{commit.date}}
-  </li>
-</ul>
+<div class="main">
+    <div class="title">Commits</div>
+    <div class="list">
+        <ngb-accordion *ngFor="let commit of commits" #acc="ngbAccordion">
+          <ngb-panel title="{{commit.message}}">
+            <ng-template ngbPanelContent>
+              {{commit.date}} - {{commit.commiter}}
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+    </div>
+</div>

@@ -19,7 +19,8 @@ export class MainComponent implements OnInit {
                 console.log(obj);
                 return {
                     message: obj.commit.message,
-                    date: obj.commit.committer.date
+                    date: obj.commit.committer.date,
+                    commiter: obj.commit.committer.name
                 }
             }));
     }
