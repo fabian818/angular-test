@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from './main.service';
+
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+    commits: any;
 
-  ngOnInit(): void {
-  }
+    constructor(private mainService: MainService) { }
+
+    ngOnInit(): void {
+        this.mainService.getCommits()
+            .subscribe((data: any) => this.commits = data.map(obj => {
+                console.log(obj);
+                return {
+                    message: obj.commit.message,
+                    date: obj.commit.committer.date
+                }
+            }));
+    }
 
 }

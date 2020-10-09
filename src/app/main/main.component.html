@@ -1,1 +1,6 @@
-<p>main works!</p>
+<p>Commits</p>
+<ul class="heroes">
+  <li *ngFor="let commit of commits">
+    <span class="badge">{{commit.message}}</span> {{commit.date}}
+  </li>
+</ul>
