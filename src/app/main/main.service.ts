@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -9,7 +10,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class MainService {
     constructor(private http: HttpClient) { }
 
-    apiUrl = 'https://api.github.com/repos/fabian818/angular-test/commits';
+    apiUrl = environment.apiUrl;
 
     getCommits() {
       return this.http.get(this.apiUrl);

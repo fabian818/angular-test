@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from './main.service';
+import { Commit } from '../commit';
+
 
 
 @Component({
@@ -9,7 +11,7 @@ import { MainService } from './main.service';
 })
 export class MainComponent implements OnInit {
 
-    commits: any;
+    commits: Commit;
 
     constructor(private mainService: MainService) { }
 
